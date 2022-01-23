@@ -1,17 +1,38 @@
 @import './variables';
+@import './mixins';
 @import './colors';
 
 // если нужны только пару глифов, то через ссылку гугла.
 // все что используются по проекту, через font-face
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
 
-* {
+html {
   @include reset('Roboto', $base-font-size, $dark);
+
+  @include for-phone-only {
+    font-size: $mobile-font-size;
+  }
+  @include for-tablet-only {
+    font-size: $tablet-font-size;
+  }
+  @include for-laptop-only {
+    font-size: $laptop-font-size;
+  }
 }
 
+.box {
+  width: rem(250px);
+  height: rem(250px);
+  border: 1px solid black;
+  @include for-phone-only {
+    width: rem(200px);
+    height: rem(200px);
+  }
+}
 h1 {
-  @include adaptiv-font(55, 25);
-  //   line-height: 28px;
+  //   @include adaptiv-font(55, 25);
+  font-size: rem(55px);
+  margin-bottom: rem(15px);
 }
 
 h2 {
@@ -31,7 +52,9 @@ h6 {
 }
 
 p {
+  @include adaptiv-font(14, 12);
 }
 
 a {
+  @include adaptiv-font(14, 12);
 }

@@ -1,4 +1,6 @@
 @import './variables';
+@import './colors';
+@import './mixins';
 
 /* Указываем box sizing */
 *,
@@ -81,7 +83,7 @@ select {
 
 body {
   scroll-behavior: smooth;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .container {
