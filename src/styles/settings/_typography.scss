@@ -1,0 +1,37 @@
+@import './variables';
+@import './colors';
+
+// если нужны только пару глифов, то через ссылку гугла.
+// все что используются по проекту, через font-face
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+
+* {
+  @include reset('Roboto', $base-font-size, $dark);
+}
+
+h1 {
+  @include adaptiv-font(55, 25);
+  //   line-height: 28px;
+}
+
+h2 {
+  @include adaptiv-font(40, 18);
+}
+
+h3 {
+}
+
+h4 {
+}
+
+h5 {
+}
+
+h6 {
+}
+
+p {
+}
+
+a {
+}

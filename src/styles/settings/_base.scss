@@ -1,0 +1,42 @@
+a[href^='http']:empty::before {
+  content: attr(href);
+}
+
+a[href]:not([class]) {
+  text-decoration: underline;
+
+  color: red;
+}
+
+//img
+
+img {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  text-align: center;
+
+  font-family: sans-serif;
+  font-weight: 300;
+  line-height: 2;
+}
+
+img::before {
+  display: block;
+
+  margin-bottom: 10px;
+
+  content: 'Упс, изображение ниже поломалось :(';
+}
+
+img::after {
+  display: block;
+
+  content: '(url: ' attr(src) ')';
+
+  font-size: 12px;
+}
