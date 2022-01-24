@@ -75,7 +75,7 @@
     }
 }
 
-@function em($pixels, $context: $browser-context) {
+@function em($pixels, $context: $base-font-size) {
     @if (unitless($pixels)) {
         $pixels: $pixels * 1px;
     }
@@ -85,4 +85,41 @@
     }
 
     @return $pixels / $context * 1em;
+}
+
+@mixin button-variant($color, $background, $border-color) {
+    color: $color;
+    background-color: $background;
+    border-color: $border-color;
+    transition: all 0.2s ease;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color;
+        background-color: darken($background, 3%);
+        border-color: darken($border-color, 5%);
+    }
+
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $background;
+            border-color: $border-color;
+        }
+    }
+}
+
+@mixin box-center($justify: center, $align: center) {
+    display: flex;
+
+    @if ($align !=false) {
+        align-items: $align;
+    }
+    @if ($justify !=false) {
+        justify-content: $justify;
+    }
 }

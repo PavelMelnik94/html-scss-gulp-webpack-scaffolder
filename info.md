@@ -1,6 +1,5 @@
-
-
 # libs
+
     "@barba/core": "^2.9.7",
     "animejs": "^3.2.1",
     "aos": "^3.0.0-beta.6",
@@ -15,5 +14,4 @@
     "premonish": "^1.0.4",
     "very-simple-fetch": "^0.2.0",
 
-
-# padding и
+# http://w3cplus.github.io/SassMagic/
