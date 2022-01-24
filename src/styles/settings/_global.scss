@@ -1,18 +1,18 @@
-@import './variables';
-@import './colors';
-@import './mixins';
+@import "./variables";
+@import "./colors";
+@import "./mixins";
 
 /* Указываем box sizing */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Убираем внутренние отступы */
 ul[class],
 ol[class] {
-  padding: 0;
+    padding: 0;
 }
 
 /* Убираем внешние отступы */
@@ -30,37 +30,38 @@ figcaption,
 blockquote,
 dl,
 dd {
-  margin: 0;
+    margin: 0;
 }
 
 /* Выставляем основные настройки по-умолчанию для body */
 body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    overflow-x: hidden;
+    line-height: 1.5;
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
 ul[class],
 ol[class] {
-  list-style: none;
+    list-style: none;
 }
 
 /* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+    text-decoration-skip-ink: auto;
 }
 
 /* Упрощаем работу с изображениями */
 img {
-  max-width: 100%;
-  display: block;
+    max-width: 100%;
+    display: block;
 }
 
 /* Указываем понятную периодичность в потоке данных у article*/
 article > * + * {
-  margin-top: 1em;
+    margin-top: 1em;
 }
 
 /* Наследуем шрифты для инпутов и кнопок */
@@ -68,53 +69,59 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+    font: inherit;
+}
+
+/* фокус для элементов формы */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    box-shadow: none;
+    outline: #000 dotted 2px;
+    outline-offset: 0.05em;
 }
 
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-body {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 .container {
-  margin: 0 auto;
+    margin: 0 auto;
 
-  @include for-phone-only {
-    width: 98%;
-    background-color: lightslategray;
-  }
+    @include for-phone-only {
+        width: 98%;
+        background-color: lightslategray;
+    }
 
-  @include for-tablet-only {
-    width: calc(100vw - 2.5rem);
+    @include for-tablet-only {
+        width: calc(100vw - 2.5rem);
 
-    background-color: lightseagreen;
-  }
+        background-color: lightseagreen;
+    }
 
-  @include for-laptop-only {
-    width: 1000px;
-    background-color: darkgoldenrod;
-  }
-  @include for-desktop-only {
-    width: 1200px;
-    background-color: darkolivegreen;
-  }
+    @include for-laptop-only {
+        width: 1000px;
+        background-color: darkgoldenrod;
+    }
+    @include for-desktop-only {
+        width: 1200px;
+        background-color: darkolivegreen;
+    }
 
-  @include for-tv-only {
-    width: 1500px;
-    background-color: darkslateblue;
-  }
+    @include for-tv-only {
+        width: 1500px;
+        background-color: darkslateblue;
+    }
 }
 
 .container-fluid {
-  width: 100% !important;
+    width: 100% !important;
 }

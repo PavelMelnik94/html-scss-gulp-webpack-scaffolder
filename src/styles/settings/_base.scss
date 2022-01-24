@@ -1,42 +1,36 @@
-a[href^='http']:empty::before {
-  content: attr(href);
-}
-
-a[href]:not([class]) {
-  text-decoration: underline;
-
-  color: red;
+a[href^="http"]:empty::before {
+    content: attr(href);
 }
 
 //img
 
 img {
-  position: relative;
+    position: relative;
 
-  display: block;
+    display: block;
 
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 
-  text-align: center;
+    text-align: center;
 
-  font-family: sans-serif;
-  font-weight: 300;
-  line-height: 2;
+    font-family: sans-serif;
+    font-weight: 300;
+    line-height: 2;
 }
 
 img::before {
-  display: block;
+    display: block;
 
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 
-  content: 'Упс, изображение ниже поломалось :(';
+    content: "Упс, изображение ниже поломалось :(";
 }
 
 img::after {
-  display: block;
+    display: block;
 
-  content: '(url: ' attr(src) ')';
+    content: "(url: " attr(src) ")";
 
-  font-size: 12px;
+    font-size: 12px;
 }
