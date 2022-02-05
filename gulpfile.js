@@ -11,6 +11,7 @@ const webp = require('gulp-webp');
 const ttf2woff2 = require('gulp-ttf2woff2');
 const webpack = require('webpack-stream');
 const cssnano = require('gulp-cssnano');
+const fileinclude = require('gulp-file-include');
 
 //
 const webpackCfg = require('./webpack.config');
@@ -18,7 +19,8 @@ const webpackCfg = require('./webpack.config');
 gulp.task('server', function () {
   browserSync({
     server: {
-      baseDir: 'dist'
+      baseDir: 'dist',
+      proxy: 'localhost:3001'
     }
   });
 
@@ -55,8 +57,15 @@ gulp.task('watch', function () {
 gulp.task('html', function () {
   return gulp
     .src('src/*.html')
+    .pipe(
+      fileinclude({
+        prefix: '@@',
+        basepath: '@file'
+      })
+    )
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest('dist/'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('scripts', function () {

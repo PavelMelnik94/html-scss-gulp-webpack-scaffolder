@@ -35,11 +35,13 @@ dd {
 
 /* Выставляем основные настройки по-умолчанию для body */
 body {
+    overflow-x: hidden;
+
     min-height: 100vh;
+
+    line-height: 1.5;
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
-    overflow-x: hidden;
-    line-height: 1.5;
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
@@ -55,8 +57,9 @@ a:not([class]) {
 
 /* Упрощаем работу с изображениями */
 img {
-    max-width: 100%;
     display: block;
+
+    max-width: 100%;
 }
 
 /* Указываем понятную периодичность в потоке данных у article*/
@@ -78,17 +81,17 @@ button:focus,
 input:focus,
 textarea:focus,
 select:focus {
-    box-shadow: none;
     outline: #000 dotted 2px;
     outline-offset: 0.05em;
+    box-shadow: none;
 }
 
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
 @media (prefers-reduced-motion: reduce) {
     * {
+        transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
 }
@@ -98,6 +101,7 @@ select:focus {
 
     @include for-phone-only {
         width: 98%;
+
         background-color: lightslategray;
     }
 
@@ -109,15 +113,18 @@ select:focus {
 
     @include for-laptop-only {
         width: 1000px;
+
         background-color: darkgoldenrod;
     }
     @include for-desktop-only {
         width: 1200px;
+
         background-color: darkolivegreen;
     }
 
     @include for-tv-only {
         width: 1500px;
+
         background-color: darkslateblue;
     }
 }
