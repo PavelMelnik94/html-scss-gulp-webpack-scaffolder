@@ -1,4 +1,4 @@
-@import './variables';
+@import "./variables";
 // брейкпоинты
 @mixin for-phone-only {
     @media only screen and (min-width: 320px) and (max-width: 639.98px) {
@@ -50,7 +50,9 @@
     }
 
     @media (min-width: 640px) {
-        font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
+        font-size: calc(
+            #{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth})
+        );
     }
 }
 
@@ -86,18 +88,17 @@
 }
 
 @mixin button-variant($color, $background, $border-color) {
-    transition: all 0.2s ease;
-
     color: $color;
-    border-color: $border-color;
     background-color: $background;
+    border-color: $border-color;
+    transition: all 0.2s ease;
 
     &:hover,
     &:focus,
     &:active {
         color: $color;
-        border-color: darken($border-color, 5%);
         background-color: darken($background, 3%);
+        border-color: darken($border-color, 5%);
     }
 
     &[disabled],
@@ -106,8 +107,8 @@
         &:hover,
         &:focus,
         &:active {
-            border-color: $border-color;
             background-color: $background;
+            border-color: $border-color;
         }
     }
 }
@@ -120,25 +121,5 @@
     }
     @if ($justify !=false) {
         justify-content: $justify;
-    }
-}
-
-// * Usage
-// * @include debug(); // draws outlines around parent and children
-// * @include debug(true); // draws outline around parent, puts semi-transparent background on parent and children
-
-@mixin debug($useBackground: false) {
-    outline: 1px solid rgba(200, 100, 50, 0.9);
-
-    @if ($useBackground) {
-        background: rgba(200, 100, 50, 0.1);
-
-        * {
-            background: rgba(200, 100, 50, 0.1);
-        }
-    } @else {
-        * {
-            outline: 1px solid rgba(200, 100, 50, 0.9);
-        }
     }
 }

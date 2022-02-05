@@ -31,20 +31,10 @@ img {
   height: 500px;
 }
 
-// ДЕБАГИНГ ФОТОК
+img::after {
+  display: block;
 
-// img::before {
-//   display: block;
+  content: '(url: ' attr(src) ')';
 
-//   margin-bottom: 10px;
-
-//   content: 'Упс, изображение ниже поломалось :(';
-// }
-
-// img::after {
-//   display: block;
-
-//   content: '(url: ' attr(src) ')';
-
-//   font-size: 12px;
-// }
+  font-size: 12px;
+}

@@ -1,5 +1,5 @@
-import './modules/index';
 import './debug';
+import './modules/index';
 import u from 'umbrellajs';
 
 window.addEventListener('load', function () {
