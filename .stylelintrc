@@ -1,12 +1,12 @@
 {
-	"extends": [
-		"stylelint-order-config-standard"
-	],
-	"syntax": "scss",
-	"plugins": [
-		"stylelint-order"
-	],
-	"rules": {
-		"indentation": 4
-	}
+  "extends": [
+    "stylelint-order-config-standard"
+  ],
+  "syntax": "scss",
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "indentation": 4
+  }
 }
