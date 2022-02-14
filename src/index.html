@@ -13,7 +13,12 @@
 <link rel="preload" href="image.png">
  -->
     <!-- Больше информации: http://prgssr.ru/development/tehniki-prefetchinga-dlya-uluchsheniya-proizvoditelnosti-sajtov.html -->
-
+<script>
+if(!(window.fetch&&window.Promise&&[].includes&&Object.assign&&window.Map)){
+	document
+	.write('<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch"></scr'+'ipt>')
+	}
+</script>
     <link rel="stylesheet" href="css/styles.min.css" />
   </head>
   <body>
